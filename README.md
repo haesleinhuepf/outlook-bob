@@ -1,3 +1,14 @@
+
+
+
+## Setup
+
+To make outlook-bob work in your Outlook, download this repository to a local folder, e.g. using git:
+
+```
+git clone https://github.com/haesleinhuepf/outlook-bob
+```
+
 1. VBA MAcro
 
 Open Outlook.
@@ -6,7 +17,7 @@ Press ALT + F11 to open the VBA Editor.
 
 Insert a new module: Right-click Project1 → Insert → Module.
 
-Paste the code of "outlook_response.vba"
+Paste the code of `outlook_response.vba`. Modify the path in that file so that it points at `email_assistant.py`.
 
 In Outlook, go to File → Options → Customize Ribbon.
 
