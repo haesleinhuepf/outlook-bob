@@ -21,13 +21,27 @@ To make outlook-bob work in your Outlook, download this repository to a local fo
 git clone https://github.com/haesleinhuepf/outlook-bob
 ```
 
+### Download ollama + model
+
 Also download and install [ollama](https://ollama.com/). After installation, run this terminal command to download the [gemma3:4b model](https://ollama.com/library/gemma3:4b), which is used under the hood per default:
 
 ```
 ollama pull gemma3:4b
 ```
 
-1. VBA MAcro
+### Setup Python
+
+Create a new conda environment named `bob-env` and install requirements:
+
+```
+conda create --name bob-env python=3.11 
+```
+
+```
+pip install -r requirements.txt
+```
+
+### Setup VBA MAcro in Outlook
 
 Open Outlook.
 
@@ -48,13 +62,18 @@ Find Project1.GenerateReplyWithPython and click "Add."
 Rename and assign an icon if you want.
 
 
-2. Security/Trust Center Settings
+### Configure Security/Trust Center Settings
 
 Go to File > Options > Trust Center > Trust Center Settings > Macro Settings
 
 Ensure "Notifications for all macros" is selected. 
 
 If you click the Ribbon button configured above, a notification will open, asking you to activate Macros. After this, the AI-Assistant should work.
+
+
+### Customization
+
+Consider modifying `system_prompt.txt`. E.g. enter your name and email footer.
 
 ## Acknowledgements
 
