@@ -60,7 +60,7 @@ Please provide a response that is:
                     {"role": "user", "content": prompt}
                 ]
             )
-            return response.choices[0].message.content
+            return handle_response(response.choices[0].message.content)
         except Exception as e:
             return f"Error generating response: {str(e)}"
 
@@ -73,6 +73,10 @@ Please provide a response that is:
         except Exception as e:
             print(f"Error writing response file: {str(e)}")
             return False
+        
+def handle_response(response):
+    """Handle the response from the AI"""
+    return response.replace("```html", "").replace("```", "")
 
 def main():
     # Set up argument parser
