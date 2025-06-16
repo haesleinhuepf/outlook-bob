@@ -26,6 +26,10 @@ Sub GenerateReplyWithPython()
     btn.Caption = "Saying Thanks"
     btn.OnAction = "HandleThanksResponse"
     
+    Set btn = cb.Controls.Add(msoControlButton)
+    btn.Caption = "Other"
+    btn.OnAction = "HandleOtherResponse"
+    
     ' Show popup menu at cursor position
     cb.ShowPopup
 End Sub
@@ -44,6 +48,27 @@ End Sub
 
 Sub HandleThanksResponse()
     ProcessResponse "saying_thanks"
+End Sub
+
+Sub HandleOtherResponse()
+    Dim customType As String
+    customType = InputBox("Enter custom response:", "Custom Response")
+    
+    If customType = "" Then
+        Exit Sub
+    End If
+    
+    ' Convert spaces and special characters to underscores
+    Dim i As Integer
+    For i = 1 To Len(customType)
+        Dim char As String
+        char = Mid(customType, i, 1)
+        If Not (char Like "[A-Za-z0-9_]") Then
+            customType = Replace(customType, char, "_")
+        End If
+    Next i
+    
+    ProcessResponse customType
 End Sub
 
 Private Sub ProcessResponse(responseType As String)
