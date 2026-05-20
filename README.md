@@ -10,7 +10,7 @@ After a moment, an email response window with an AI-generated response will open
 
 ![](docs/images/outlook_screenshot2.png)
 
-Outlook-bob is a research project aiming to make transparent how AI-assistants can be incorporated into email-communication in a privacy-preserving way. Under the hood it uses artificial intelligence / large language models to generate text. Users are responsible to verify the generated text before submitting the email. Outlook-Bob uses locally installed language models to ensure optimal privacy. Under the hood, no data is submitted to the internet or any LLM-service provider. 
+Outlook-bob is a research project aiming to make transparent how AI-assistants can be incorporated into email-communication in a privacy-preserving way. Under the hood it uses artificial intelligence / large language models to generate text. Users are responsible to verify the generated text before submitting the email. Outlook-Bob uses locally installed language models to ensure optimal privacy. No data is submitted to the internet or any online LLM-service provider. 
 
 
 ## Setup
